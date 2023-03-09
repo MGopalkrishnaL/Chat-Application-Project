@@ -1,16 +1,15 @@
 package com.Gopal.ChatApplicationProject.controller;
 
 import com.Gopal.ChatApplicationProject.model.Status;
+import com.Gopal.ChatApplicationProject.service.ChatHistoryService;
 import com.Gopal.ChatApplicationProject.service.StatusService;
-import io.swagger.v3.core.util.Json;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1/status")
@@ -38,4 +37,10 @@ public class StatusController {
         status.setStatusDescription(statusDescription);
         return status;
     }
+    @GetMapping("/show-all-status")
+    public List<Status> getall(){
+        return service.getall();
+    }
+
+
 }
