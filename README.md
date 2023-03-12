@@ -25,6 +25,8 @@
 * JSON is a lightweight, language-independent, data interchange format. See http://www.JSON.org/ The files in this package implement JSON encoders/decoders in Java. It also includes the capability to convert between JSON and XML, HTTP headers, Cookies, and CDL. This is a reference implementation.
 ## MySQL
 * MySQL JDBC driver.
+## Swagger
+* It provide the UserInterface for all our API's. 
 # Project Structure(MVC Structure)
 ## Model
 * UserModel
@@ -37,9 +39,9 @@
 * ChatHistoryController
 
 ## DAO
-* UserRepo
-* StatusRepo
-* ChatHistoryRepo
+* UserRepository
+* StatusRepository
+* ChatHistoryRepository
 
 ## Service
 * UserService
@@ -48,8 +50,25 @@
 
  ## Util
 * CommonUtil --> which has the validation part for number, password and email etc
+
 # EndPoints
 
+## Chat History
+* send-message
+* get-chat
+* get-conversation
+
+## Status
+* create-status
+* show-all-status
+
+## User
+* create-user
+* get-allusers
+* get-users
+* login
+* update-user/{userId}
+* delete-user/{userId}
 
 # Working
 * Project mainly focuses on Users, status of users and messages sent to other users
